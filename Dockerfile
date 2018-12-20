@@ -16,6 +16,3 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
 
 RUN mkdir -p /var/www/.composer \
 && chown www-data:www-data /var/www/.composer
-
-# Install mysql
-RUN apt-get install -y mysql-server
