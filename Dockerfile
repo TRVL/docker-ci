@@ -3,6 +3,20 @@ FROM php:7.2-cli
 # Update package repositories
 RUN apt-get update
 
+# Install php dependencies
+RUN apt-get install -y --no-install-recommends \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng-dev \
+        libicu-dev \
+        libxslt-dev \
+        locales \
+        gettext-base \
+        gettext \
+        libxpm-dev \
+        libvpx-dev
+
 # Install PHP extensions
 RUN docker-php-ext-configure gd \
         --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
