@@ -4,6 +4,11 @@ FROM php:7.2-cli
 RUN apt-get update
 
 # Install PHP extensions
+RUN docker-php-ext-configure gd \
+        --with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
+        --with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
+        --with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
+--with-vpx-dir=/usr/lib/x86_64-linux-gnu/
 RUN docker-php-ext-install gd exif intl xsl json soap dom zip opcache pdo pdo_mysql bcmath pcntl
 
 # Install composer
