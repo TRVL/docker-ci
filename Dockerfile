@@ -10,7 +10,7 @@ ENV DOCKER_BUCKET="download.docker.com" \
 # Update package repositories
 RUN apt-get update
 
-# Install php dependencies
+# Install dependencies
 RUN apt-get install -y --no-install-recommends \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -21,6 +21,7 @@ RUN apt-get install -y --no-install-recommends \
         locales \
         gettext-base \
         gettext \
+        wget \
         libxpm-dev \
         libvpx-dev
 
