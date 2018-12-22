@@ -1,12 +1,5 @@
 FROM php:7.2-cli
 
-ENV DOCKER_BUCKET="download.docker.com" \
-    DOCKER_VERSION="18.09.0" \
-    DOCKER_CHANNEL="stable" \
-    DOCKER_SHA256="08795696e852328d66753963249f4396af2295a7fe2847b839f7102e25e47cb9" \
-    DIND_COMMIT="3b5fac462d21ca164b3778647420016315289034" \
-    DOCKER_COMPOSE_VERSION="1.23.2"
-
 # Update package repositories
 RUN apt-get update
 
